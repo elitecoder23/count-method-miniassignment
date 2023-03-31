@@ -1,0 +1,34 @@
+public static int countFlyingSaucers(String s) {
+  int count = 0;
+  int countTotal = 0;
+  
+  for(int i = 0; i < s.length() - 1; i++) {
+      if(s.charAt(i) == '(') {
+        int j = i + 1;
+        while(j < s.length() && s.charAt(j) == '=') {
+            j++;
+        }
+       if(j < s.length() && s.charAt(j) == ')') {
+       count++;
+       i = j;
+      }
+  }
+
+}
+
+String extendedString = s + s;
+
+for(int i = 0; i < extendedString.length() - 1; i++) {
+    if(extendedString.charAt(i) == '(') {
+        int j = i + 1;
+        while (j < extendedString.length() && extendedString.charAt(j) == '=') {
+            j++;
+        }
+        if (j < extendedString.length() && extended.String.charAt(j) == ')') {
+            countTotal++;
+            i = j;
+        }
+    }
+}
+return countTotal - count;
+}
